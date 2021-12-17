@@ -25,6 +25,11 @@ function activateGallery() {
   //          data-description="A catamaran on Moorea lagoon, French Polynesia.">
   //   </div>
   //   ....
+  //   ....
+  // <div class="col col-aside gallery-info" id="gallery-info">
+  //   <h3 class="title">Venice Beach</h3>
+  //   <p class="description">An overhead shot of Venice Beach, California.</p>
+  // </div>
 
 
   // To select the thumbnails images we can use:
@@ -40,12 +45,17 @@ function activateGallery() {
   let mainImage = document.querySelector('#gallery-photo img')
 
   thumbnails.forEach(function(thumbnail) {
+    // Preload larger images.
+    let newImageSrc = thumbnail.dataset.largeVersion;
+    let largeVersion = new Image();
+    largeVersion.src = newImageSrc
+
+
     thumbnail.addEventListener('click', function() {
       // Set clicked image as main image.
       // To find large img in HTML tag:
       // "data-large-version="/images/large/beach.jpg"",
       // use dataset.largeVersion
-      let newImageSrc = thumbnail.dataset.largeVersion;
       mainImage.setAttribute('src', newImageSrc);
 
       // Change alt description with img
