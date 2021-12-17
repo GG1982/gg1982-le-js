@@ -486,7 +486,7 @@ h2 ~ p {
   display: inline-block;
   margin: 0 0 10px 0;
   opacity: 0.5;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
   width: 100%;
 }
 .gallery-thumbs img:hover {
@@ -715,8 +715,3 @@ h2 ~ p {
     display: none;
   }
 }
-
-
-
-
-
